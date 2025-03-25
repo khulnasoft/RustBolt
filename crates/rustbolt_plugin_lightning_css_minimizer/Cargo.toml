@@ -1,0 +1,24 @@
+[package]
+description = "rustbolt lightning css minifier plugin"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_plugin_lightning_css_minimizer"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lightningcss     = { workspace = true, features = ["sourcemap", "browserslist"] }
+parcel_sourcemap = { workspace = true }
+rayon            = { workspace = true }
+regex            = { workspace = true }
+tracing          = { workspace = true }
+
+rustbolt_core  = { workspace = true }
+rustbolt_error = { workspace = true }
+rustbolt_hash  = { workspace = true }
+rustbolt_hook  = { workspace = true }
+rustbolt_util  = { workspace = true }
+
+[package.metadata.cargo-shear]
+ignored = ["tracing"]

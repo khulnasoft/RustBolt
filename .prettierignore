@@ -1,0 +1,24 @@
+package.json
+
+# Ignore generated
+dist/
+packages/rustbolt/src/config/schema.check.js
+
+# Ignore example fixtures
+
+# Ignore test related
+
+packages/**/etc/**/*
+packages/rustbolt-test-tools/template/**/*
+packages/rustbolt-test-tools/src/helper/legacy/**/*
+packages/rustbolt-test-tools/tests/**/*.*
+packages/rustbolt-test-tools/tests/**/DO_NOT_REMOVE
+!packages/rustbolt-test-tools/tests/**/*.test.ts
+!packages/rustbolt-test-tools/tests/**/*.test.js
+!packages/rustbolt-test-tools/tests/**/*.config.js
+
+crates/**/*
+target/**/*
+tests/**/*
+
+!tests/**/test.filter.js

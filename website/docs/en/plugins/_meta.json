@@ -1,0 +1,13 @@
+[
+  "index",
+  {
+    "type": "dir",
+    "name": "webpack",
+    "label": "Webpack-aligned built-in plugins"
+  },
+  {
+    "type": "dir",
+    "name": "rustbolt",
+    "label": "Rustbolt-only built-in plugins"
+  }
+]

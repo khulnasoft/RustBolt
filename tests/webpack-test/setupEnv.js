@@ -1,0 +1,1 @@
+process.env.RUSTBOLT_CONFIG_VALIDATE = 'loose-silent';

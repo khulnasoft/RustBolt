@@ -1,0 +1,31 @@
+[package]
+description = "rustbolt util"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_util"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bitflags         = { workspace = true }
+concat-string    = { workspace = true }
+cow-utils        = { workspace = true }
+dashmap          = { workspace = true }
+indexmap         = { workspace = true }
+itoa             = { version = "1.0.14" }
+regex            = { workspace = true }
+ropey            = { workspace = true }
+rustbolt_cacheable = { workspace = true }
+rustbolt_paths     = { workspace = true }
+rustc-hash       = { workspace = true }
+serde            = { workspace = true }
+serde_json       = { workspace = true }
+sugar_path       = { workspace = true }
+unicase          = { workspace = true }
+
+swc_config = { workspace = true }
+swc_core   = { workspace = true, features = ["base", "ecma_ast"] }
+
+rustbolt_regex = { workspace = true }

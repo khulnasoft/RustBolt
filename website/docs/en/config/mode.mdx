@@ -1,0 +1,65 @@
+import WebpackLicense from '@components/WebpackLicense';
+import PropertyType from '@components/PropertyType';
+
+<WebpackLicense from="https://webpack.js.org/configuration/node/" />
+
+# Mode
+
+<PropertyType
+  type="'production' | 'development' | 'none'"
+  defaultValueList={[{ defaultValue: "'production'" }]}
+/>
+
+The `mode` configuration is used to set the build mode of Rustbolt to enable the default optimization strategy.
+
+## Usage
+
+You can set the mode directly in Rustbolt config:
+
+```js title="rustbolt.config.mjs"
+export default {
+  mode: 'production',
+};
+```
+
+In actual scenarios, you can dynamically set the mode according to `process.env.NODE_ENV`:
+
+```js title="rustbolt.config.mjs"
+const isProduction = process.env.NODE_ENV === 'production';
+
+export default {
+  mode: isProduction ? 'production' : 'development',
+};
+```
+
+Alternatively, you can set the mode using the `--mode` option on the Rustbolt CLI:
+
+```bash
+rustbolt --mode=production
+```
+
+:::info
+`--mode` option on the CLI has a higher priority than `mode` in Rustbolt config.
+:::
+
+## Optional values
+
+`mode` has the following optional values:
+
+### production
+
+In production mode, Rustbolt automatically enables the following optimization strategies:
+
+- Replace `process.env.NODE_ENV` in code with `'production'`.
+- Set the default value of `optimization.minimize` to `true` to enable SWC minification.
+
+### development
+
+In development mode, Rustbolt automatically enables the following optimization strategies:
+
+- Replace `process.env.NODE_ENV` in code with `'development'`.
+- Set proper naming format for modules and chunks.
+
+### none
+
+When `mode` is set to `'none'`, Rustbolt will not enable any default optimization strategies.

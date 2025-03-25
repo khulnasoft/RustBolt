@@ -1,0 +1,31 @@
+[package]
+description = "rustbolt extract css plugin"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_plugin_extract_css"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+[dependencies]
+async-trait              = { workspace = true }
+cow-utils                = { workspace = true }
+regex                    = { workspace = true }
+rustbolt_cacheable         = { workspace = true }
+rustbolt_collections       = { workspace = true }
+rustbolt_core              = { workspace = true }
+rustbolt_error             = { workspace = true }
+rustbolt_hash              = { workspace = true }
+rustbolt_hook              = { workspace = true }
+rustbolt_paths             = { workspace = true }
+rustbolt_plugin_css        = { workspace = true }
+rustbolt_plugin_javascript = { workspace = true }
+rustbolt_plugin_runtime    = { workspace = true }
+rustbolt_util              = { workspace = true }
+rustc-hash               = { workspace = true }
+serde                    = { workspace = true, features = ["derive"] }
+serde_json               = { workspace = true }
+tokio                    = { workspace = true }
+tracing                  = { workspace = true }
+ustr                     = { workspace = true }
+
+[package.metadata.cargo-shear]
+ignored = ["tracing", "tokio"]

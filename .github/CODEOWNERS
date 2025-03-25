@@ -1,0 +1,79 @@
+# About code owners
+
+# https://help.github.com/en/articles/about-code-owners
+
+# Rustbolt Project Owner is @hardfist
+
+# Default to no one
+
+# *
+
+# Ignore lock files
+
+Cargo.lock
+pnpm-lock.yaml
+
+# Infra
+
+/.github/workflows @jerrykingxyz
+/scripts @jerrykingxyz
+
+# Crates in alphabetical order
+
+/crates/rustbolt
+/crates/node_binding
+/crates/rustbolt_base64
+/crates/rustbolt_core
+/crates/rustbolt_core/src/compiler/make @jerrykingxyz
+/crates/rustbolt_error
+/crates/rustbolt_fs
+/crates/rustbolt_fs_node
+/crates/rustbolt_futures
+/crates/rustbolt_collections
+/crates/rustbolt_ids
+
+# Loaders
+
+/crates/rustbolt_loader_lightningcss @JSerFeng
+/crates/rustbolt_loader_swc
+/crates/rustbolt_loader_preact_refresh @LingyuCoder
+/crates/rustbolt_loader_react_refresh @ahabhgk
+
+# Plugins
+
+/crates/rustbolt_plugin_asset
+/crates/rustbolt_plugin_banner
+/crates/rustbolt_plugin_copy
+/crates/rustbolt_plugin_css
+/crates/rustbolt_plugin_devtool
+/crates/rustbolt_plugin_entry
+/crates/rustbolt_plugin_externals
+/crates/rustbolt_plugin_html @LingyuCoder
+/crates/rustbolt_plugin_javascript
+/crates/rustbolt_plugin_json
+/crates/rustbolt_plugin_library
+/crates/rustbolt_plugin_progress
+/crates/rustbolt_plugin_real_content_hash
+/crates/rustbolt_plugin_remove_empty_chunks
+/crates/rustbolt_plugin_runtime
+/crates/rustbolt_plugin_schemes
+/crates/rustbolt_plugin_split_chunks @JSerFeng
+/crates/rustbolt_plugin_wasm
+/crates/rustbolt_tracing @h-a-n-a
+/crates/rustbolt_util
+
+# Packages in alphabetical order
+
+/packages/create-rustbolt @chenjiahan
+/packages/rustbolt
+/packages/rustbolt-cli
+/packages/rustbolt-test-tools
+/packages/rustbolt-tracing @h-a-n-a
+
+# Tests
+
+/tests/bench
+/tests/e2e
+/tests/webpack-cli-test
+/tests/webpack-examples
+/tests/webpack-test

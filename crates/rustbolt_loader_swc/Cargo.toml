@@ -1,0 +1,49 @@
+[package]
+description = "rustbolt builtin swc loader"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_loader_swc"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[package.metadata.cargo-shear]
+ignored = ["swc"]
+[features]
+default = []
+plugin = [
+  "swc_core/plugin_transform_host_native",
+  "swc_core/plugin_transform_host_native_filesystem_cache",
+  "swc_core/plugin_transform_host_native_shared_runtime",
+]
+
+[dependencies]
+anyhow                   = { workspace = true }
+async-trait              = { workspace = true }
+base64                   = { version = "0.22.1" }
+either                   = { workspace = true }
+indoc                    = { workspace = true }
+jsonc-parser             = { version = "0.26.2", features = ["serde"] }
+rustbolt_ast               = { workspace = true }
+rustbolt_cacheable         = { workspace = true }
+rustbolt_core              = { workspace = true }
+rustbolt_error             = { workspace = true }
+rustbolt_hook              = { workspace = true }
+rustbolt_loader_runner     = { workspace = true }
+rustbolt_plugin_javascript = { workspace = true }
+rustbolt_swc_plugin_import = { workspace = true }
+rustbolt_util              = { workspace = true }
+rustc-hash               = { workspace = true }
+serde                    = { workspace = true, features = ["derive"] }
+serde_json               = { workspace = true }
+swc                      = { workspace = true, features = ["manual-tokio-runtime"] }
+swc_config               = { workspace = true }
+swc_core                 = { workspace = true, features = ["base", "ecma_ast", "common"] }
+tokio                    = { workspace = true }
+tracing                  = { workspace = true }
+url                      = "2.5.0"
+
+[target.'cfg(not(target_family = "wasm"))'.dependencies]
+stacker = { workspace = true }
+
+[build-dependencies]
+cargo_toml = { version = "0.21.0" }
