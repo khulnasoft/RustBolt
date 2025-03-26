@@ -1,0 +1,5 @@
+@import "https://raw.githubusercontent.com/khulnasoft/rustbolt/55d5d81/packages/rustbolt-test-tools/tests/configCases/css/at-import/c.css";
+
+div {
+	background: url(https://raw.githubusercontent.com/khulnasoft/rustbolt/55d5d81/packages/rustbolt-test-tools/tests/configCases/asset/_images/file.jpg)
+}

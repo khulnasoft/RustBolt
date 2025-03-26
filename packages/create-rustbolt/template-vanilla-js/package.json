@@ -1,0 +1,14 @@
+{
+  "name": "rustbolt-vanilla-starter",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rustbolt dev",
+    "build": "rustbolt build",
+    "preview": "rustbolt preview"
+  },
+  "devDependencies": {
+    "@rustbolt/cli": "workspace:*",
+    "@rustbolt/core": "workspace:*"
+  }
+}

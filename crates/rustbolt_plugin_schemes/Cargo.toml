@@ -1,0 +1,34 @@
+[package]
+description = "rustbolt schemes plugin"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_plugin_schemes"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow        = { workspace = true }
+async-trait   = { workspace = true }
+cow-utils     = { workspace = true }
+once_cell     = { workspace = true }
+regex         = { workspace = true }
+rustbolt_base64 = { workspace = true }
+rustbolt_core   = { workspace = true }
+rustbolt_error  = { workspace = true }
+rustbolt_fs     = { workspace = true }
+rustbolt_hook   = { workspace = true }
+rustbolt_paths  = { workspace = true }
+rustbolt_util   = { workspace = true }
+serde         = { workspace = true }
+serde_json    = { workspace = true }
+sha2          = "0.10.8"
+tokio         = { workspace = true }
+tracing       = { workspace = true }
+url           = { workspace = true }
+urlencoding   = { workspace = true }
+
+
+[package.metadata.cargo-shear]
+ignored = ["tracing"]

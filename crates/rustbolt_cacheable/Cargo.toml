@@ -1,0 +1,29 @@
+[package]
+description = "rustbolt_cacheable"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_cacheable"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+
+[features]
+noop = []
+
+[dependencies]
+camino          = { workspace = true }
+dashmap         = { workspace = true }
+hashlink        = { workspace = true }
+indexmap        = { workspace = true }
+inventory       = { workspace = true }
+json            = { workspace = true }
+lightningcss    = { workspace = true }
+once_cell       = { workspace = true }
+rkyv            = { workspace = true }
+rustbolt_macros   = { workspace = true }
+rustbolt_resolver = { workspace = true }
+rustbolt_sources  = { workspace = true }
+serde_json      = { workspace = true }
+smol_str        = { workspace = true }
+swc_core        = { workspace = true, features = ["ecma_ast"] }
+ustr            = { workspace = true }
+xxhash-rust     = { workspace = true, features = ["const_xxh64"] }

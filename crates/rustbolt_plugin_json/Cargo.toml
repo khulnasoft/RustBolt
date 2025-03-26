@@ -1,0 +1,18 @@
+[package]
+description = "rustbolt json plugin"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_plugin_json"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-trait      = { workspace = true }
+cow-utils        = { workspace = true }
+json             = { workspace = true }
+ropey            = "1.6.1"
+rustbolt_cacheable = { workspace = true }
+rustbolt_core      = { workspace = true }
+rustbolt_error     = { workspace = true }
+rustbolt_util      = { workspace = true }

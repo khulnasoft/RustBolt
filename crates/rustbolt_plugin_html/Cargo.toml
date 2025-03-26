@@ -1,0 +1,37 @@
+[package]
+description = "rustbolt html plugin"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_plugin_html"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+[features]
+default = []
+
+[dependencies]
+anyhow            = { workspace = true }
+cow-utils         = { workspace = true }
+dashmap           = { workspace = true }
+futures           = { workspace = true }
+itertools         = { workspace = true }
+path-clean        = { workspace = true }
+rayon             = { workspace = true }
+rustbolt_base64     = { workspace = true }
+rustbolt_core       = { workspace = true }
+rustbolt_dojang     = { workspace = true }
+rustbolt_error      = { workspace = true }
+rustbolt_hook       = { workspace = true }
+rustbolt_paths      = { workspace = true }
+rustbolt_util       = { workspace = true }
+serde             = { workspace = true, features = ["derive"] }
+serde_json        = { workspace = true }
+sha2              = { workspace = true }
+sugar_path        = { workspace = true }
+swc_core          = { workspace = true }
+swc_html          = { workspace = true }
+swc_html_minifier = { workspace = true, features = ["custom-css-minifier"] }
+tracing           = { workspace = true }
+urlencoding       = { workspace = true }
+
+[package.metadata.cargo-shear]
+ignored = ["tracing"]

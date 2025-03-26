@@ -1,0 +1,13 @@
+[package]
+description = "rustbolt web worker plugin"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_plugin_web_worker_template"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rustbolt_core           = { workspace = true }
+rustbolt_plugin_runtime = { workspace = true }

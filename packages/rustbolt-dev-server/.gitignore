@@ -1,0 +1,24 @@
+# Local
+.DS_Store
+*.local
+*.log*
+*.tsbuildinfo
+
+# Dist
+node_modules
+dist/
+client/
+test-results
+
+# Test
+tests/js/
+!tests/**/node_modules
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea
+*.tsbuildinfo
+
+

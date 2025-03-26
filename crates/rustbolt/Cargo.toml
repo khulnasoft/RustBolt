@@ -1,0 +1,65 @@
+[package]
+description = "rustbolt"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+
+[features]
+full = ["loaders"]
+
+loader_lightningcss   = ["rustbolt_loader_lightningcss"]
+loader_preact_refresh = ["rustbolt_loader_preact_refresh"]
+loader_react_refresh  = ["rustbolt_loader_react_refresh"]
+loader_swc            = ["rustbolt_loader_swc"]
+loaders               = ["loader_lightningcss", "loader_preact_refresh", "loader_react_refresh", "loader_swc"]
+
+[dependencies]
+bitflags     = { workspace = true }
+enum-tag     = { workspace = true }
+indexmap     = { workspace = true, features = ["rayon"] }
+regex        = { workspace = true }
+rustbolt_core  = { workspace = true }
+rustbolt_error = { workspace = true }
+rustbolt_fs    = { workspace = true }
+rustbolt_hash  = { workspace = true }
+rustbolt_ids   = { workspace = true }
+rustbolt_paths = { workspace = true }
+rustbolt_regex = { workspace = true }
+rustc-hash   = { workspace = true }
+serde_json   = { workspace = true }
+
+# Plugins
+rustbolt_plugin_asset                   = { workspace = true }
+rustbolt_plugin_css                     = { workspace = true }
+rustbolt_plugin_devtool                 = { workspace = true }
+rustbolt_plugin_ensure_chunk_conditions = { workspace = true }
+rustbolt_plugin_entry                   = { workspace = true }
+rustbolt_plugin_externals               = { workspace = true }
+rustbolt_plugin_javascript              = { workspace = true }
+rustbolt_plugin_json                    = { workspace = true }
+rustbolt_plugin_library                 = { workspace = true }
+rustbolt_plugin_merge_duplicate_chunks  = { workspace = true }
+rustbolt_plugin_no_emit_on_errors       = { workspace = true }
+rustbolt_plugin_real_content_hash       = { workspace = true }
+rustbolt_plugin_remove_empty_chunks     = { workspace = true }
+rustbolt_plugin_runtime                 = { workspace = true }
+rustbolt_plugin_runtime_chunk           = { workspace = true }
+rustbolt_plugin_schemes                 = { workspace = true }
+rustbolt_plugin_swc_js_minimizer        = { workspace = true }
+rustbolt_plugin_wasm                    = { workspace = true }
+rustbolt_plugin_worker                  = { workspace = true }
+
+# Loaders
+rustbolt_loader_lightningcss   = { workspace = true, optional = true }
+rustbolt_loader_preact_refresh = { workspace = true, optional = true }
+rustbolt_loader_react_refresh  = { workspace = true, optional = true }
+rustbolt_loader_swc            = { workspace = true, optional = true }
+
+[dev-dependencies]
+insta = { workspace = true, features = ["filters"] }
+tokio = { workspace = true }
+
+[lints]
+workspace = true

@@ -1,0 +1,11 @@
+[package]
+description = "rustbolt base64"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_base64"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+
+[dependencies]
+base64-simd = { version = "0.8.0", features = ["alloc"] }
+regex       = { workspace = true }

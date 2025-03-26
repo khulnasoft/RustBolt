@@ -1,0 +1,97 @@
+import WebpackLicense from '@components/WebpackLicense';
+import { ApiMeta, Stability } from '@components/ApiMeta.tsx';
+import { Tabs, Tab } from '@theme';
+
+<WebpackLicense from="https://webpack.js.org/guides/web-workers/" />
+
+# Web Workers
+
+[Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) are first-class citizens of Rustbolt, which means you don't need any loader to use Web Workers directly.
+
+## Usage
+
+```js
+new Worker(new URL('./worker.js', import.meta.url));
+```
+
+```js
+new Worker(new URL('./worker.js', import.meta.url), {
+  name: 'my-worker', // <-- When the value of the name property can be statically analyzed, the worker's chunk name can be customized with this property to replace the [name] placeholder when the chunk file is generated
+});
+```
+
+In addition to `new Worker()`, the following syntax is also supported:
+
+- `new SharedWorker()`
+- `import { Worker } from "worker_threads"`: usually used in Node environments
+- `navigator.serviceWorker.register()`: used to register Service Workers
+
+Custom syntax can be provided via [`module.parser.javascript.worker`](/config/module#moduleparserjavascriptworker).
+
+For examples:
+
+- [examples/worker](https://github.com/rustbolt-contrib/rstack-examples/tree/main/rustbolt/worker)
+- [examples/monaco-editor-js](https://github.com/rustbolt-contrib/rstack-examples/tree/main/rustbolt/monaco-editor-js)
+- [examples/monaco-editor-ts-react](https://github.com/rustbolt-contrib/rstack-examples/tree/main/rustbolt/monaco-editor-ts-react)
+
+:::info
+The syntax was chosen to allow running code without bundler, it is also available in native ECMAScript modules in the browser.
+:::
+
+:::warning
+
+1. Note that `new Worker` can also accept a string representation of a URL, but only passing in URLs is supported in Rustbolt.
+2. Rustbolt does not support the use of variables in `new Worker`. For example, the following code will not work:
+
+   ```js
+   const url = new URL('./path/to/worker.js', import.meta.url);
+   const worker = new Worker(url);
+   ```
+
+   This is because Rustbolt cannot statically analyze the syntax. Please be sure to note this limitation when using the Worker syntax in Rustbolt.
+
+3. Not support `/* webpackEntryOptions: { filename: "workers/[name].js" } */` magic comments for now.
+
+:::
+
+## worker-loader
+
+:::warning
+`worker-loader` is provided only as a temporary solution to facilitate project migration to Rustbolt. It is recommended to use the `new Worker()` syntax instead.
+:::
+
+Rustbolt also supports worker-loader. However, since [worker-loader](https://github.com/webpack-contrib/worker-loader) is no longer maintained, please use [worker-rustbolt-loader](https://github.com/rustbolt-contrib/worker-rustbolt-loader) as a replacement.
+
+Use [resolveLoader](/config/resolve-loader) to replace worker-loader with worker-rustbolt-loader:
+
+<Tabs>
+  <Tab label="ESM">
+```js title="rustbolt.config.mjs"
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+
+export default {
+  resolveLoader: {
+    alias: {
+      'worker-loader': require.resolve('worker-rustbolt-loader'),
+    },
+  },
+};
+```
+
+  </Tab>
+  <Tab label="CJS">
+
+```js title="rustbolt.config.cjs"
+module.exports = {
+  resolveLoader: {
+    alias: {
+      'worker-loader': require.resolve('worker-rustbolt-loader'),
+    },
+  },
+};
+```
+
+  </Tab>
+</Tabs>

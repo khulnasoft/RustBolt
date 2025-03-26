@@ -1,0 +1,25 @@
+[package]
+description = "rustbolt loader runner"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_loader_runner"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+[dependencies]
+anymap      = { workspace = true }
+async-trait = { workspace = true }
+derive_more = { workspace = true, features = ["debug"] }
+rustc-hash  = { workspace = true }
+tokio       = { workspace = true, features = ["test-util"] }
+
+once_cell          = { workspace = true }
+regex              = { workspace = true }
+rustbolt_cacheable   = { workspace = true }
+rustbolt_collections = { workspace = true }
+rustbolt_error       = { workspace = true }
+rustbolt_fs          = { workspace = true }
+rustbolt_paths       = { workspace = true }
+rustbolt_sources     = { workspace = true }
+rustbolt_util        = { workspace = true }
+serde_json         = { workspace = true }
+tracing            = { workspace = true }

@@ -1,0 +1,31 @@
+[package]
+description        = "rustbolt dynamic entry plugin"
+edition            = "2021"
+homepage.workspace = true
+license            = "MIT"
+name               = "rustbolt_plugin_dll"
+repository         = "https://github.com/khulnasoft/rustbolt"
+version            = "0.2.0"
+
+[dependencies]
+rustbolt_cacheable        = { workspace = true }
+rustbolt_collections      = { workspace = true }
+rustbolt_core             = { workspace = true }
+rustbolt_error            = { workspace = true }
+rustbolt_hash             = { workspace = true }
+rustbolt_hook             = { workspace = true }
+rustbolt_paths            = { workspace = true }
+rustbolt_plugin_externals = { workspace = true }
+rustbolt_util             = { workspace = true }
+
+async-trait = { workspace = true }
+rustc-hash  = { workspace = true }
+serde       = { workspace = true, features = ["derive"] }
+serde_json  = { workspace = true }
+tracing     = { workspace = true }
+
+[lints]
+workspace = true
+
+[package.metadata.cargo-shear]
+ignored = ["tracing"]

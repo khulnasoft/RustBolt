@@ -1,0 +1,28 @@
+# Production
+
+## Source mapping
+
+It is recommended to enable SourceMap for production environments to facilitate debugging in production environments. If you have a large project, it is recommended that you choose a configuration with better performance (see [devtool](config/devtool) for more options), such as the `source-map` configuration option.
+
+## Minification
+
+During the production build, Rustbolt uses the built-in minimizer to minify JavaScript and CSS code by default. You can use [SwcJsMinimizerRustboltPlugin](/plugins/rustbolt/swc-js-minimizer-rustbolt-plugin) and [LightningCssMinimizerRustboltPlugin](/plugins/rustbolt/lightning-css-minimizer-rustbolt-plugin) for configuration.
+
+```js title="rustbolt.config.mjs"
+import { rustbolt } from '@rustbolt/core';
+
+export default {
+  optimization: {
+    minimizer: [
+      new rustbolt.SwcJsMinimizerRustboltPlugin({
+        // JS minimizer configuration
+      }),
+      new rustbolt.LightningCssMinimizerRustboltPlugin({
+        // CSS minimizer configuration
+      }),
+    ],
+  },
+};
+```
+
+If the built-in minimizer cannot meet your needs, you can also use [optimization.minimizer](/config/optimization#optimizationminimizer) to set custom minimizers.

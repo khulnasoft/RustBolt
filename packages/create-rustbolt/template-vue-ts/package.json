@@ -1,0 +1,20 @@
+{
+  "name": "rustbolt-vue-ts-starter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "rustbolt dev",
+    "build": "rustbolt build",
+    "preview": "rustbolt preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@rustbolt/cli": "workspace:*",
+    "@rustbolt/core": "workspace:*",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "vue-loader": "^17.4.2"
+  }
+}

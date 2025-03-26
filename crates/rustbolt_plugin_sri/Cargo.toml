@@ -1,0 +1,41 @@
+[package]
+description = "rustbolt subresource integrity plugin"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_plugin_sri"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-trait                     = { workspace = true }
+cow-utils                       = { workspace = true }
+dashmap                         = { workspace = true }
+derive_more                     = { workspace = true, features = ["debug"] }
+futures                         = { workspace = true }
+indexmap                        = { workspace = true }
+pathdiff                        = { workspace = true }
+rayon                           = { workspace = true }
+regex                           = { workspace = true }
+rustbolt_base64                   = { workspace = true }
+rustbolt_cacheable                = { workspace = true }
+rustbolt_collections              = { workspace = true }
+rustbolt_core                     = { workspace = true }
+rustbolt_error                    = { workspace = true }
+rustbolt_fs                       = { workspace = true }
+rustbolt_hash                     = { workspace = true }
+rustbolt_hook                     = { workspace = true }
+rustbolt_paths                    = { workspace = true }
+rustbolt_plugin_html              = { workspace = true }
+rustbolt_plugin_real_content_hash = { workspace = true }
+rustbolt_plugin_runtime           = { workspace = true }
+rustbolt_util                     = { workspace = true }
+rustc-hash                      = { workspace = true }
+serde_json                      = { workspace = true }
+sha2                            = { workspace = true }
+tokio                           = { workspace = true }
+tracing                         = { workspace = true }
+urlencoding                     = { workspace = true }
+
+[package.metadata.cargo-shear]
+ignored = ["tracing", "async-trait", "rustbolt_hash", "tokio"]

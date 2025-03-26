@@ -1,0 +1,71 @@
+# Plugins
+
+- **Type:**
+
+```ts
+type Falsy = false | '' | 0 | null | undefined;
+
+type Plugin =
+  | RustboltPluginInstance
+  | RustboltPluginFunction
+  | WebpackPluginInstance
+  | WebpackPluginFunction
+  | Falsy;
+
+type Plugins = Plugin[];
+```
+
+- **Default:** `[]`
+
+The `plugins` option is used to register a set of Rustbolt or webpack plugins to customize the build process.
+
+Please refer to [Plugins page](/guide/features/plugin) for more information on using plugins in Rustbolt.
+
+## Built-in plugins
+
+Rustbolt comes with a variety built-in plugins available under `rustbolt.PluginName`.
+
+For example, [`DefinePlugin`](/plugins/webpack/define-plugin) allows you to replaces variables in your code with other values or expressions at compile time. You can access it via `rustbolt.DefinePlugin` and create a plugin instance with `new`:
+
+```js title="rustbolt.config.mjs"
+import { rustbolt } from '@rustbolt/core';
+
+export default {
+  //...
+  plugins: [
+    new rustbolt.DefinePlugin({
+      // pass plugin options
+    }),
+  ],
+};
+```
+
+## webpack plugins
+
+Rustbolt strives to maintain compatibility with the webpack plugin ecosystem to leverage the excellent features that have been accumulated and validated by the community. Please refer to the [Plugin Compatibility List](/guide/compatibility/plugin) to access a list of webpack plugins that have passed our compatibility tests:
+
+```js title="rustbolt.config.mjs"
+import { rustbolt } from '@rustbolt/core';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+
+export default {
+  //...
+  plugins: [new HtmlWebpackPlugin()],
+};
+```
+
+## Disable plugins
+
+Rustbolt ignores `false`, `''`, `0`, `null` and `undefined` values in the `plugins` array, which allows you to easily disable a plugin.
+
+For example, enable [HotModuleReplacementPlugin](/plugins/webpack/hot-module-replacement-plugin) only in the development environment:
+
+```js title="rustbolt.config.mjs"
+import { rustbolt } from '@rustbolt/core';
+
+const isDev = process.env.NODE_ENV === 'development';
+
+export default {
+  plugins: [isDev && new rustbolt.HotModuleReplacementPlugin()],
+};
+```
