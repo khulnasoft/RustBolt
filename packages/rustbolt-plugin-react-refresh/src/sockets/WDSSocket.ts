@@ -7,13 +7,13 @@
  * Copyright (c) 2019 Michael Mok
  * https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/0b960573797bf38926937994c481e4fec9ed8aa6/LICENSE
  */
-import getSocketUrlParts from './utils/getSocketUrlParts';
-import getUrlFromParts from './utils/getUrlFromParts';
-import getWDSMetadata from './utils/getWDSMetadata';
-import type { SocketClient } from './utils/getWDSMetadata';
+import getSocketUrlParts from "./utils/getSocketUrlParts";
+import getUrlFromParts from "./utils/getUrlFromParts";
+import getWDSMetadata from "./utils/getWDSMetadata";
+import type { SocketClient } from "./utils/getWDSMetadata";
 
 declare global {
-  var __webpack_dev_server_client__: SocketClient | { default: SocketClient };
+	var __webpack_dev_server_client__: SocketClient | { default: SocketClient };
 }
 
 /**
@@ -23,26 +23,26 @@ declare global {
  * @returns
  */
 export function init(
-  messageHandler: (...args: unknown[]) => void,
-  resourceQuery: string,
+	messageHandler: (...args: unknown[]) => void,
+	resourceQuery: string
 ) {
-  if (typeof __webpack_dev_server_client__ !== 'undefined') {
-    let SocketClient: SocketClient;
+	if (typeof __webpack_dev_server_client__ !== "undefined") {
+		let SocketClient: SocketClient;
 
-    if ('default' in __webpack_dev_server_client__) {
-      SocketClient = __webpack_dev_server_client__.default;
-    } else {
-      SocketClient = __webpack_dev_server_client__;
-    }
+		if ("default" in __webpack_dev_server_client__) {
+			SocketClient = __webpack_dev_server_client__.default;
+		} else {
+			SocketClient = __webpack_dev_server_client__;
+		}
 
-    const wdsMeta = getWDSMetadata(SocketClient);
-    const urlParts = getSocketUrlParts(resourceQuery, wdsMeta);
+		const wdsMeta = getWDSMetadata(SocketClient);
+		const urlParts = getSocketUrlParts(resourceQuery, wdsMeta);
 
-    const connection = new SocketClient(getUrlFromParts(urlParts, wdsMeta));
+		const connection = new SocketClient(getUrlFromParts(urlParts, wdsMeta));
 
-    connection.onMessage(function onSocketMessage(data) {
-      const message = JSON.parse(data as string);
-      messageHandler(message);
-    });
-  }
+		connection.onMessage(function onSocketMessage(data) {
+			const message = JSON.parse(data as string);
+			messageHandler(message);
+		});
+	}
 }

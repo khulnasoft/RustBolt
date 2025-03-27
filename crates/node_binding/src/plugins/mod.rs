@@ -7,6 +7,6 @@ mod js_loader;
 pub use context_replacement::*;
 pub use js_cleanup_plugin::*;
 pub use js_hooks_plugin::*;
-pub(super) use js_loader::{JsLoaderItem, JsLoaderRustboltPlugin, JsLoaderRunner};
+pub(super) use js_loader::{JsLoaderItem, JsLoaderRunner, JsLoaderRustboltPlugin};
 pub mod buildtime_plugins;
 pub use interceptor::*;

@@ -1,5 +1,5 @@
-import type { SocketUrlParts } from './getSocketUrlParts';
-import type { WDSMetaObj } from './getWDSMetadata';
+import type { SocketUrlParts } from "./getSocketUrlParts";
+import type { WDSMetaObj } from "./getWDSMetadata";
 
 /**
  * Create a valid URL from parsed URL parts.
@@ -8,28 +8,28 @@ import type { WDSMetaObj } from './getWDSMetadata';
  * @returns The generated URL.
  */
 export default function urlFromParts(
-  urlParts: SocketUrlParts,
-  metadata: WDSMetaObj = {},
+	urlParts: SocketUrlParts,
+	metadata: WDSMetaObj = {}
 ): string {
-  let fullProtocol = 'http:';
-  if (urlParts.protocol) {
-    fullProtocol = urlParts.protocol;
-  }
-  if (metadata.enforceWs) {
-    fullProtocol = fullProtocol.replace(/^(?:http|.+-extension|file)/i, 'ws');
-  }
+	let fullProtocol = "http:";
+	if (urlParts.protocol) {
+		fullProtocol = urlParts.protocol;
+	}
+	if (metadata.enforceWs) {
+		fullProtocol = fullProtocol.replace(/^(?:http|.+-extension|file)/i, "ws");
+	}
 
-  fullProtocol = `${fullProtocol}//`;
+	fullProtocol = `${fullProtocol}//`;
 
-  let fullHost = urlParts.hostname;
-  if (urlParts.auth) {
-    const fullAuth = `${urlParts.auth.split(':').map(encodeURIComponent).join(':')}@`;
-    fullHost = fullAuth + fullHost;
-  }
-  if (urlParts.port) {
-    fullHost = `${fullHost}:${urlParts.port}`;
-  }
+	let fullHost = urlParts.hostname;
+	if (urlParts.auth) {
+		const fullAuth = `${urlParts.auth.split(":").map(encodeURIComponent).join(":")}@`;
+		fullHost = fullAuth + fullHost;
+	}
+	if (urlParts.port) {
+		fullHost = `${fullHost}:${urlParts.port}`;
+	}
 
-  const url = new URL(urlParts.pathname, fullProtocol + fullHost);
-  return url.href;
+	const url = new URL(urlParts.pathname, fullProtocol + fullHost);
+	return url.href;
 }

@@ -76,19 +76,20 @@ impl JsCompilation {
         };
         let new_source = new_source.into_rustbolt_result()?;
 
-        let new_info: napi::Result<Option<rustbolt_core::AssetInfo>> = asset_info_update_or_function
-          .map(
-            |asset_info_update_or_function| match asset_info_update_or_function {
-              Either::A(asset_info) => Ok(asset_info.into()),
-              Either::B(asset_info_fn) => Ok(
-                asset_info_fn
-                  .call(original_info.clone().into())?
-                  .map(Into::into)
-                  .unwrap_or_default(),
-              ),
-            },
-          )
-          .transpose();
+        let new_info: napi::Result<Option<rustbolt_core::AssetInfo>> =
+          asset_info_update_or_function
+            .map(
+              |asset_info_update_or_function| match asset_info_update_or_function {
+                Either::A(asset_info) => Ok(asset_info.into()),
+                Either::B(asset_info_fn) => Ok(
+                  asset_info_fn
+                    .call(original_info.clone().into())?
+                    .map(Into::into)
+                    .unwrap_or_default(),
+                ),
+              },
+            )
+            .transpose();
         if let Some(new_info) = new_info.into_rustbolt_result()? {
           original_info.merge_another_asset(new_info);
         }

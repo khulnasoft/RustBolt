@@ -30,7 +30,7 @@ function createPublicPathGetter(compiler: Compiler) {
 
 export function getRustboltMemoryAssets(
 	compiler: Compiler,
-	rdm: ReturnType<typeof wdm>,
+	rdm: ReturnType<typeof wdm>
 ): RequestHandler {
 	const getPublicPath = createPublicPathGetter(compiler);
 

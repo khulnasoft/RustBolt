@@ -157,7 +157,10 @@ impl NamedChunkIdsPlugin {
 }
 
 #[plugin_hook(CompilationChunkIds for NamedChunkIdsPlugin)]
-async fn chunk_ids(&self, compilation: &mut rustbolt_core::Compilation) -> rustbolt_error::Result<()> {
+async fn chunk_ids(
+  &self,
+  compilation: &mut rustbolt_core::Compilation,
+) -> rustbolt_error::Result<()> {
   let more_chunks = if let Some(mutations) = compilation
     .incremental
     .mutations_read(IncrementalPasses::CHUNK_IDS)

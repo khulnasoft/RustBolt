@@ -22,7 +22,10 @@ impl DeterministicChunkIdsPlugin {
 }
 
 #[plugin_hook(CompilationChunkIds for DeterministicChunkIdsPlugin)]
-async fn chunk_ids(&self, compilation: &mut rustbolt_core::Compilation) -> rustbolt_error::Result<()> {
+async fn chunk_ids(
+  &self,
+  compilation: &mut rustbolt_core::Compilation,
+) -> rustbolt_error::Result<()> {
   let mut used_ids = get_used_chunk_ids(compilation);
   let used_ids_len = used_ids.len();
 

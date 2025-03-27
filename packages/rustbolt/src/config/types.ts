@@ -2074,7 +2074,10 @@ export interface RustboltPluginInstance {
 	[k: string]: any;
 }
 
-export type RustboltPluginFunction = (this: Compiler, compiler: Compiler) => void;
+export type RustboltPluginFunction = (
+	this: Compiler,
+	compiler: Compiler
+) => void;
 
 // The Compiler type of webpack is not exactly the same as Rustbolt.
 // It is allowed to use webpack plugins in in the Rustbolt config,

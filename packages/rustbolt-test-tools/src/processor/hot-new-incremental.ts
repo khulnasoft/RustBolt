@@ -48,7 +48,8 @@ export class HotNewIncrementalProcessor<
 	): TCompilerOptions<T> {
 		const options = super.defaultOptions<T>(context);
 		if (this._hotOptions.compilerType === ECompilerType.Rustbolt) {
-			const rustboltOptions = options as TCompilerOptions<ECompilerType.Rustbolt>;
+			const rustboltOptions =
+				options as TCompilerOptions<ECompilerType.Rustbolt>;
 			rustboltOptions.experiments ??= {};
 			rustboltOptions.experiments.incremental ??= true;
 		} else {

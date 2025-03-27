@@ -135,7 +135,8 @@ impl BuilderContext {
         plugins.push(rustbolt_plugin_runtime::CommonJsChunkFormatPlugin::default().boxed());
       }
       BuiltinPluginOptions::ArrayPushCallbackChunkFormatPlugin => {
-        plugins.push(rustbolt_plugin_runtime::ArrayPushCallbackChunkFormatPlugin::default().boxed());
+        plugins
+          .push(rustbolt_plugin_runtime::ArrayPushCallbackChunkFormatPlugin::default().boxed());
       }
       BuiltinPluginOptions::ModuleChunkFormatPlugin => {
         plugins.push(rustbolt_plugin_runtime::ModuleChunkFormatPlugin::default().boxed());
@@ -275,9 +276,8 @@ impl BuilderContext {
       // BuiltinPluginOptions::SplitChunksPlugin => {
       // plugins.push(rustbolt_plugin_split_chunks::SplitChunksPlugin::default().boxed())
       // }
-      BuiltinPluginOptions::RemoveEmptyChunksPlugin => {
-        plugins.push(rustbolt_plugin_remove_empty_chunks::RemoveEmptyChunksPlugin::default().boxed())
-      }
+      BuiltinPluginOptions::RemoveEmptyChunksPlugin => plugins
+        .push(rustbolt_plugin_remove_empty_chunks::RemoveEmptyChunksPlugin::default().boxed()),
       BuiltinPluginOptions::RealContentHashPlugin => {
         plugins.push(rustbolt_plugin_real_content_hash::RealContentHashPlugin::default().boxed())
       }

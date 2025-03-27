@@ -15,6 +15,7 @@ pub use config::{
 };
 use html::{alter_asset_tag_groups, before_asset_tag_generation};
 pub use integrity::SubresourceIntegrityHashFunction;
+use runtime::{create_script, handle_runtime, link_preload};
 use rustbolt_core::{
   ChunkLoading, ChunkLoadingType, Compilation, CompilationId, CompilationParams,
   CompilerThisCompilation, CrossOriginLoading, Plugin, PluginContext,
@@ -25,7 +26,6 @@ use rustbolt_plugin_html::HtmlRustboltPlugin;
 use rustbolt_plugin_real_content_hash::RealContentHashPlugin;
 use rustbolt_plugin_runtime::RuntimePlugin;
 use rustbolt_util::fx_hash::FxDashMap;
-use runtime::{create_script, handle_runtime, link_preload};
 use rustc_hash::FxHashMap as HashMap;
 
 static COMPILATION_INTEGRITY_MAP: LazyLock<FxDashMap<CompilationId, HashMap<String, String>>> =

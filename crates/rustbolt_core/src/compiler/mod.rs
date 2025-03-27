@@ -6,7 +6,9 @@ use std::sync::{atomic::AtomicU32, Arc};
 
 use futures::future::join_all;
 use rustbolt_error::Result;
-use rustbolt_fs::{IntermediateFileSystem, NativeFileSystem, ReadableFileSystem, WritableFileSystem};
+use rustbolt_fs::{
+  IntermediateFileSystem, NativeFileSystem, ReadableFileSystem, WritableFileSystem,
+};
 use rustbolt_hook::define_hook;
 use rustbolt_macros::cacheable;
 use rustbolt_paths::{Utf8Path, Utf8PathBuf};

@@ -9,7 +9,9 @@ pub struct NormalModule {
 }
 
 impl NormalModule {
-  fn as_ref(&mut self) -> napi::Result<(&rustbolt_core::Compilation, &rustbolt_core::NormalModule)> {
+  fn as_ref(
+    &mut self,
+  ) -> napi::Result<(&rustbolt_core::Compilation, &rustbolt_core::NormalModule)> {
     let (compilation, module) = self.module.as_ref()?;
     match module.as_normal_module() {
       Some(normal_module) => Ok((compilation, normal_module)),
@@ -77,7 +79,9 @@ impl NormalModule {
       module
         .loaders()
         .iter()
-        .map(|i| rustbolt_loader_runner::LoaderItem::<rustbolt_core::RunnerContext>::from(i.clone()))
+        .map(|i| {
+          rustbolt_loader_runner::LoaderItem::<rustbolt_core::RunnerContext>::from(i.clone())
+        })
         .map(|i| JsLoaderItem::from(&i))
         .collect::<Vec<_>>(),
     )

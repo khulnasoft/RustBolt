@@ -38,7 +38,9 @@ pub fn expand_merge_from_derive(input: DeriveInput) -> Result<TokenStream> {
 fn add_trait_bounds(mut generics: Generics) -> Generics {
   for param in &mut generics.params {
     if let syn::GenericParam::Type(ref mut type_param) = *param {
-      type_param.bounds.push(parse_quote!(rustbolt_util::MergeFrom));
+      type_param
+        .bounds
+        .push(parse_quote!(rustbolt_util::MergeFrom));
     }
   }
   generics

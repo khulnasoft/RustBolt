@@ -51,9 +51,9 @@ use rustbolt_core::{
   LibraryNonUmdObject, LibraryOptions, LibraryType, MangleExportsOption, Mode, ModuleNoParseRules,
   ModuleOptions, ModuleRule, ModuleRuleEffect, ModuleType, NodeDirnameOption, NodeFilenameOption,
   NodeGlobalOption, NodeOption, Optimization, OutputOptions, ParseOption, ParserOptions,
-  ParserOptionsMap, PathInfo, PublicPath, Resolve, RustboltFuture, RuleSetCondition,
-  RuleSetLogicalConditions, SideEffectOption, StatsOptions, TrustedTypes, UsedExportsOption,
-  WasmLoading, WasmLoadingType,
+  ParserOptionsMap, PathInfo, PublicPath, Resolve, RuleSetCondition, RuleSetLogicalConditions,
+  RustboltFuture, SideEffectOption, StatsOptions, TrustedTypes, UsedExportsOption, WasmLoading,
+  WasmLoadingType,
 };
 use rustbolt_error::{
   miette::{self, Diagnostic},
@@ -1689,7 +1689,9 @@ impl ModuleOptionsBuilder {
           url: Some(JavascriptParserUrl::Enable),
           expr_context_critical: Some(true),
           wrapped_context_critical: Some(false),
-          wrapped_context_reg_exp: Some(RustboltRegex::new(".*").expect("should initialize `Regex`")),
+          wrapped_context_reg_exp: Some(
+            RustboltRegex::new(".*").expect("should initialize `Regex`"),
+          ),
           strict_export_presence: Some(false),
           worker: Some(vec!["...".to_string()]),
           import_meta: Some(true),

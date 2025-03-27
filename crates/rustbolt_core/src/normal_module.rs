@@ -40,7 +40,7 @@ use crate::{
   DependenciesBlock, DependencyId, DependencyTemplate, FactoryMeta, GenerateContext,
   GeneratorOptions, LibIdentOptions, Module, ModuleDependency, ModuleGraph, ModuleIdentifier,
   ModuleLayer, ModuleType, OutputOptions, ParseContext, ParseResult, ParserAndGenerator,
-  ParserOptions, Resolve, RustboltLoaderRunnerPlugin, RunnerContext, RuntimeGlobals, RuntimeSpec,
+  ParserOptions, Resolve, RunnerContext, RuntimeGlobals, RuntimeSpec, RustboltLoaderRunnerPlugin,
   SourceType,
 };
 

@@ -14,7 +14,10 @@ pub struct RustboltVersionRuntimeModule {
 
 impl RustboltVersionRuntimeModule {
   pub fn new(version: String) -> Self {
-    Self::with_default(Identifier::from("webpack/runtime/rustbolt_version"), version)
+    Self::with_default(
+      Identifier::from("webpack/runtime/rustbolt_version"),
+      version,
+    )
   }
 }
 

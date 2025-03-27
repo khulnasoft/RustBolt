@@ -76,8 +76,9 @@ export class DiffStatsReporter
 				item.type === ECompareResultType.Same ||
 				item.type === ECompareResultType.Different
 			) {
-				current[`${ECompilerType.Rustbolt}|${moduleType}|${"lines-in-common"}`] +=
-					item.lines?.source || 0;
+				current[
+					`${ECompilerType.Rustbolt}|${moduleType}|${"lines-in-common"}`
+				] += item.lines?.source || 0;
 				current[
 					`${ECompilerType.Webpack}|${moduleType}|${"lines-in-common"}`
 				] += item.lines?.dist || 0;

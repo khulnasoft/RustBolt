@@ -6,7 +6,9 @@ pub struct ExternalModule {
 }
 
 impl ExternalModule {
-  fn as_ref(&mut self) -> napi::Result<(&rustbolt_core::Compilation, &rustbolt_core::ExternalModule)> {
+  fn as_ref(
+    &mut self,
+  ) -> napi::Result<(&rustbolt_core::Compilation, &rustbolt_core::ExternalModule)> {
     let (compilation, module) = self.module.as_ref()?;
     match module.as_external_module() {
       Some(external_module) => Ok((compilation, external_module)),

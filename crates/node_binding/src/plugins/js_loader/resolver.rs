@@ -92,7 +92,11 @@ pub async fn get_builtin_loader(builtin: &str, options: Option<&str>) -> Result<
       })?;
     // TODO: builtin-loader supports function
     return Ok(Arc::new(
-      rustbolt_loader_lightningcss::LightningCssLoader::new(None, Config::try_from(config)?, builtin),
+      rustbolt_loader_lightningcss::LightningCssLoader::new(
+        None,
+        Config::try_from(config)?,
+        builtin,
+      ),
     ));
   }
 
@@ -103,7 +107,8 @@ pub async fn get_builtin_loader(builtin: &str, options: Option<&str>) -> Result<
   }
   if builtin.starts_with(PREACT_REFRESH_LOADER_IDENTIFIER) {
     return Ok(Arc::new(
-      rustbolt_loader_preact_refresh::PreactRefreshLoader::default().with_identifier(builtin.into()),
+      rustbolt_loader_preact_refresh::PreactRefreshLoader::default()
+        .with_identifier(builtin.into()),
     ));
   }
 

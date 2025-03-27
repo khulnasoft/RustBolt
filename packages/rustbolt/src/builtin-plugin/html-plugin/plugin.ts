@@ -240,22 +240,23 @@ function htmlTagObjectToString(tag: {
 	return res;
 }
 
-const HtmlRustboltPlugin = HtmlRustboltPluginImpl as typeof HtmlRustboltPluginImpl & {
-	/**
-	 * @deprecated Use `getCompilationHooks` instead.
-	 */
-	getHooks: (compilation: Compilation) => HtmlRustboltPluginHooks;
-	getCompilationHooks: (compilation: Compilation) => HtmlRustboltPluginHooks;
-	getCompilationOptions: (
-		compilation: Compilation
-	) => HtmlRustboltPluginOptions | void;
-	createHtmlTagObject: (
-		tagName: string,
-		attributes?: Record<string, string | boolean>,
-		innerHTML?: string | undefined
-	) => JsHtmlPluginTag;
-	version: number;
-};
+const HtmlRustboltPlugin =
+	HtmlRustboltPluginImpl as typeof HtmlRustboltPluginImpl & {
+		/**
+		 * @deprecated Use `getCompilationHooks` instead.
+		 */
+		getHooks: (compilation: Compilation) => HtmlRustboltPluginHooks;
+		getCompilationHooks: (compilation: Compilation) => HtmlRustboltPluginHooks;
+		getCompilationOptions: (
+			compilation: Compilation
+		) => HtmlRustboltPluginOptions | void;
+		createHtmlTagObject: (
+			tagName: string,
+			attributes?: Record<string, string | boolean>,
+			innerHTML?: string | undefined
+		) => JsHtmlPluginTag;
+		version: number;
+	};
 
 const voidTags = [
 	"area",

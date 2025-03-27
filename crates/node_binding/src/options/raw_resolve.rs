@@ -54,7 +54,9 @@ pub struct RawResolveOptions {
   pub pnp: Option<bool>,
 }
 
-fn normalize_alias(alias: Option<Vec<RawAliasOptionItem>>) -> rustbolt_error::Result<Option<Alias>> {
+fn normalize_alias(
+  alias: Option<Vec<RawAliasOptionItem>>,
+) -> rustbolt_error::Result<Option<Alias>> {
   alias
     .map(|alias| {
       alias

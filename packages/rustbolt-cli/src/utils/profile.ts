@@ -214,7 +214,10 @@ class RustboltProfileLoggingPlugin {
 	}
 }
 
-export async function applyProfile(profileValue: string, item: RustboltOptions) {
+export async function applyProfile(
+	profileValue: string,
+	item: RustboltOptions
+) {
 	const { asyncExitHook } = await import("exit-hook");
 	const entries = Object.entries(resolveProfile(profileValue));
 	if (entries.length <= 0) return;
@@ -235,7 +238,9 @@ export async function applyProfile(profileValue: string, item: RustboltOptions) 
 				new RustboltProfileJSCPUProfilePlugin(value.output)
 			);
 		} else if (kind === "LOGGING") {
-			(item.plugins ??= []).push(new RustboltProfileLoggingPlugin(value.output));
+			(item.plugins ??= []).push(
+				new RustboltProfileLoggingPlugin(value.output)
+			);
 		}
 	}
 }

@@ -770,7 +770,10 @@ BREAKING CHANGE: Asset processing hooks in Compilation has been merged into a si
 			0,
 			length,
 			errors.map(error => {
-				return JsRustboltDiagnostic.__to_binding(error, JsRustboltSeverity.Error);
+				return JsRustboltDiagnostic.__to_binding(
+					error,
+					JsRustboltSeverity.Error
+				);
 			})
 		);
 	}
@@ -847,7 +850,10 @@ BREAKING CHANGE: Asset processing hooks in Compilation has been merged into a si
 				) {
 					warns = processWarningsHook.call(warns as any);
 					const warnList = warns.map(warn => {
-						return JsRustboltDiagnostic.__to_binding(warn, JsRustboltSeverity.Warn);
+						return JsRustboltDiagnostic.__to_binding(
+							warn,
+							JsRustboltSeverity.Warn
+						);
 					});
 					inner.spliceDiagnostic(startIdx, startIdx + delCount, warnList);
 					return Reflect.apply(target, thisArg, [
@@ -875,7 +881,10 @@ BREAKING CHANGE: Asset processing hooks in Compilation has been merged into a si
 			0,
 			length,
 			warnings.map(warning => {
-				return JsRustboltDiagnostic.__to_binding(warning, JsRustboltSeverity.Warn);
+				return JsRustboltDiagnostic.__to_binding(
+					warning,
+					JsRustboltSeverity.Warn
+				);
 			})
 		);
 	}

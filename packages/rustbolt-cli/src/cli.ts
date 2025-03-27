@@ -1,6 +1,9 @@
 import path from "node:path";
 import util from "node:util";
-import type { RustboltPluginFunction, RustboltPluginInstance } from "@rustbolt/core";
+import type {
+	RustboltPluginFunction,
+	RustboltPluginInstance
+} from "@rustbolt/core";
 import {
 	type Compiler,
 	type MultiCompiler,
@@ -230,7 +233,10 @@ export class RustboltCLI {
 			// Handle extends property for function configs
 			if ("extends" in loadedConfig && loadedConfig.extends) {
 				// Create a temporary config path for the function result
-				const tempConfigPath = path.resolve(process.cwd(), "rustbolt.config.js");
+				const tempConfigPath = path.resolve(
+					process.cwd(),
+					"rustbolt.config.js"
+				);
 				loadedConfig = await loadExtendedConfig(
 					loadedConfig,
 					tempConfigPath,
@@ -315,10 +321,16 @@ export type RustboltConfigExport =
  * It accepts a Rustbolt config object, or a function that returns a config.
  */
 export function defineConfig(config: RustboltOptions): RustboltOptions;
-export function defineConfig(config: MultiRustboltOptions): MultiRustboltOptions;
+export function defineConfig(
+	config: MultiRustboltOptions
+): MultiRustboltOptions;
 export function defineConfig(config: RustboltConfigFn): RustboltConfigFn;
-export function defineConfig(config: RustboltConfigAsyncFn): RustboltConfigAsyncFn;
-export function defineConfig(config: RustboltConfigExport): RustboltConfigExport;
+export function defineConfig(
+	config: RustboltConfigAsyncFn
+): RustboltConfigAsyncFn;
+export function defineConfig(
+	config: RustboltConfigExport
+): RustboltConfigExport;
 export function defineConfig(config: RustboltConfigExport) {
 	return config;
 }

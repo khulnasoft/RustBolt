@@ -10,8 +10,8 @@ mod wasm_plugin;
 pub use ast::*;
 pub use loading_plugin::*;
 pub use parser_and_generator::*;
-use rustbolt_core::AssetInfo;
 pub use runtime::*;
+use rustbolt_core::AssetInfo;
 pub use wasm_plugin::*;
 
 // TODO(ahabhgk): remove this

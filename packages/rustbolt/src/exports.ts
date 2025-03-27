@@ -19,7 +19,10 @@ export type {
 } from "./Compilation";
 export { Compilation } from "./Compilation";
 export { Compiler } from "./Compiler";
-export type { MultiCompilerOptions, MultiRustboltOptions } from "./MultiCompiler";
+export type {
+	MultiCompilerOptions,
+	MultiRustboltOptions
+} from "./MultiCompiler";
 export { MultiCompiler } from "./MultiCompiler";
 
 import { RustboltOptionsApply } from "./rustboltOptionsApply";

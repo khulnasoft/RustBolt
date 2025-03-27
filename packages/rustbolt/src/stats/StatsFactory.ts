@@ -13,7 +13,11 @@ import type {
 	JsStatsError,
 	JsStatsWarning
 } from "@rustbolt/binding";
-import { HookMap, SyncBailHook, SyncWaterfallHook } from "@rustbolt/lite-tapable";
+import {
+	HookMap,
+	SyncBailHook,
+	SyncWaterfallHook
+} from "@rustbolt/lite-tapable";
 
 import type { Compilation } from "../Compilation";
 import { type Comparator, concatComparators } from "../util/comparators";

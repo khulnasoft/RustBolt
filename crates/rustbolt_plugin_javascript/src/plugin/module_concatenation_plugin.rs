@@ -142,7 +142,8 @@ impl ModuleConcatenationPlugin {
   fn get_inner_bailout_reason(
     &self,
     module_id: &ModuleIdentifier,
-  ) -> Option<dashmap::mapref::one::Ref<'_, rustbolt_collections::Identifier, Cow<'static, str>>> {
+  ) -> Option<dashmap::mapref::one::Ref<'_, rustbolt_collections::Identifier, Cow<'static, str>>>
+  {
     self.bailout_reason_map.get(module_id)
   }
 

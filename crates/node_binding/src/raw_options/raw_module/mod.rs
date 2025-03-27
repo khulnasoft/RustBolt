@@ -945,7 +945,8 @@ impl TryFrom<RawModuleOptions> for ModuleOptions {
   }
 }
 
-type RawModuleNoParseRule = Either3<String, RustboltRegex, ThreadsafeFunction<String, Option<bool>>>;
+type RawModuleNoParseRule =
+  Either3<String, RustboltRegex, ThreadsafeFunction<String, Option<bool>>>;
 type RawModuleNoParseRules = Either<RawModuleNoParseRule, Vec<RawModuleNoParseRule>>;
 
 struct RawModuleNoParseRuleWrapper(RawModuleNoParseRule);

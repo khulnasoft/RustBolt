@@ -1,7 +1,9 @@
 use std::borrow::Cow;
 
 use async_trait::async_trait;
-use rustbolt_core::{ModuleDependency, ModuleFactory, ModuleFactoryCreateData, ModuleFactoryResult};
+use rustbolt_core::{
+  ModuleDependency, ModuleFactory, ModuleFactoryCreateData, ModuleFactoryResult,
+};
 use rustbolt_error::{Diagnosable, Diagnostic, Result};
 
 use super::{

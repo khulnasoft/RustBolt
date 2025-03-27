@@ -5,8 +5,8 @@ mod cacheable_dyn;
 mod hook;
 mod merge;
 mod plugin;
-mod rustbolt_version;
 mod runtime_module;
+mod rustbolt_version;
 mod source_map_config;
 
 #[proc_macro_attribute]

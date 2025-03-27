@@ -3,7 +3,9 @@
 use std::fmt;
 
 use futures::future::BoxFuture;
-use rustbolt_core::{ApplyContext, Compilation, CompilationAddEntry, CompilerOptions, PluginContext};
+use rustbolt_core::{
+  ApplyContext, Compilation, CompilationAddEntry, CompilerOptions, PluginContext,
+};
 use rustbolt_error::Result;
 use rustbolt_hook::{plugin, plugin_hook};
 

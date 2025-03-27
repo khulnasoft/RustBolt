@@ -19,8 +19,9 @@ export enum ECompilerEvent {
 }
 
 export const COMPILER_FACTORIES: TCompilerFactories = {
-	[ECompilerType.Rustbolt]: ((options: TCompilerOptions<ECompilerType.Rustbolt>) =>
-		require("@rustbolt/core")(options)) as TCompilerFactory<ECompilerType>,
+	[ECompilerType.Rustbolt]: ((
+		options: TCompilerOptions<ECompilerType.Rustbolt>
+	) => require("@rustbolt/core")(options)) as TCompilerFactory<ECompilerType>,
 	[ECompilerType.Webpack]: ((
 		options: TCompilerOptions<ECompilerType.Webpack>
 	) => require("webpack")(options)) as TCompilerFactory<ECompilerType>

@@ -8,7 +8,11 @@
  * https://github.com/webpack/webpack/blob/main/LICENSE
  */
 import type { AsArray, Hook } from "@rustbolt/lite-tapable";
-import { HookMap, SyncBailHook, SyncWaterfallHook } from "@rustbolt/lite-tapable";
+import {
+	HookMap,
+	SyncBailHook,
+	SyncWaterfallHook
+} from "@rustbolt/lite-tapable";
 
 import type {
 	StatsAsset,

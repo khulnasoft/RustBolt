@@ -114,8 +114,8 @@ use crate::{
   entry::JsEntryPluginOptions, plugins::JsLoaderRustboltPlugin, JsLoaderRunner,
   RawContextReplacementPluginOptions, RawDynamicEntryPluginOptions,
   RawEvalDevToolModulePluginOptions, RawExternalItemWrapper, RawExternalsPluginOptions,
-  RawHttpExternalsRustboltPluginOptions, RawRsdoctorPluginOptions, RawSourceMapDevToolPluginOptions,
-  RawSplitChunksOptions,
+  RawHttpExternalsRustboltPluginOptions, RawRsdoctorPluginOptions,
+  RawSourceMapDevToolPluginOptions, RawSplitChunksOptions,
 };
 
 #[napi(string_enum)]
@@ -496,22 +496,26 @@ impl BuiltinPlugin {
       }
       BuiltinPluginName::LightningCssMinimizerRustboltPlugin => plugins.push(
         LightningCssMinimizerRustboltPlugin::new(
-          downcast_into::<RawLightningCssMinimizerRustboltPluginOptions>(self.options)?.try_into()?,
+          downcast_into::<RawLightningCssMinimizerRustboltPluginOptions>(self.options)?
+            .try_into()?,
         )
         .boxed(),
       ),
       BuiltinPluginName::CopyRustboltPlugin => {
         let plugin = CopyRustboltPlugin::new(
-          CopyRustboltPluginOptions::from(downcast_into::<RawCopyRustboltPluginOptions>(self.options)?)
-            .patterns,
+          CopyRustboltPluginOptions::from(downcast_into::<RawCopyRustboltPluginOptions>(
+            self.options,
+          )?)
+          .patterns,
         )
         .boxed();
         plugins.push(plugin);
       }
       BuiltinPluginName::HtmlRustboltPlugin => {
-        let plugin =
-          HtmlRustboltPlugin::new(downcast_into::<RawHtmlRustboltPluginOptions>(self.options)?.into())
-            .boxed();
+        let plugin = HtmlRustboltPlugin::new(
+          downcast_into::<RawHtmlRustboltPluginOptions>(self.options)?.into(),
+        )
+        .boxed();
         plugins.push(plugin);
       }
       BuiltinPluginName::BundlerInfoRustboltPlugin => {
@@ -539,8 +543,9 @@ impl BuiltinPlugin {
         .boxed(),
       ),
       BuiltinPluginName::JsLoaderRustboltPlugin => {
-        plugins
-          .push(JsLoaderRustboltPlugin::new(downcast_into::<JsLoaderRunner>(self.options)?).boxed());
+        plugins.push(
+          JsLoaderRustboltPlugin::new(downcast_into::<JsLoaderRunner>(self.options)?).boxed(),
+        );
       }
       BuiltinPluginName::LazyCompilationPlugin => {
         let options = downcast_into::<RawLazyCompilationOption>(self.options)?;

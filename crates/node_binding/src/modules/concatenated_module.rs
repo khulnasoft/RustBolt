@@ -8,7 +8,10 @@ pub struct ConcatenatedModule {
 impl ConcatenatedModule {
   fn as_ref(
     &mut self,
-  ) -> napi::Result<(&rustbolt_core::Compilation, &rustbolt_core::ConcatenatedModule)> {
+  ) -> napi::Result<(
+    &rustbolt_core::Compilation,
+    &rustbolt_core::ConcatenatedModule,
+  )> {
     let (compilation, module) = self.module.as_ref()?;
     match module.as_concatenated_module() {
       Some(concatenated_module) => Ok((compilation, concatenated_module)),

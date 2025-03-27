@@ -1,7 +1,9 @@
 use std::sync::Arc;
 
 use rustbolt_core::{Compilation, ErrorSpan};
-use rustbolt_error::{error, DiagnosticKind, IntoTWithDiagnosticArray, Result, TWithDiagnosticArray};
+use rustbolt_error::{
+  error, DiagnosticKind, IntoTWithDiagnosticArray, Result, TWithDiagnosticArray,
+};
 use swc_core::common::{sync::Lrc, FileName, FilePathMapping, SourceFile, SourceMap, GLOBALS};
 use swc_html::{
   ast::Document,

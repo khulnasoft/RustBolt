@@ -13,22 +13,22 @@
  *
  * [Ref](https://github.com/webpack-contrib/webpack-hot-middleware/blob/cb29abb9dde435a1ac8e9b19f82d7d36b1093198/client.js#L152)
  */
-const singletonKey = '__webpack_hot_middleware_reporter__';
+const singletonKey = "__webpack_hot_middleware_reporter__";
 
 interface WHMClient {
-  cleanProblemsCache: () => void;
-  problems: () => boolean;
-  success: () => void;
-  useCustomOverlay: (customOverlay: {
-    showProblems: (type: string, data: string[]) => void;
-    clear: () => void;
-  }) => void;
+	cleanProblemsCache: () => void;
+	problems: () => boolean;
+	success: () => void;
+	useCustomOverlay: (customOverlay: {
+		showProblems: (type: string, data: string[]) => void;
+		clear: () => void;
+	}) => void;
 }
 
 declare global {
-  interface Window {
-    [singletonKey]: WHMClient;
-  }
+	interface Window {
+		[singletonKey]: WHMClient;
+	}
 }
 
 /**
@@ -37,14 +37,14 @@ declare global {
  * @returns {void}
  */
 export function init(messageHandler: (...args: unknown[]) => void) {
-  const client = window[singletonKey];
+	const client = window[singletonKey];
 
-  client.useCustomOverlay({
-    showProblems(type, data) {
-      messageHandler({ type, data });
-    },
-    clear() {
-      messageHandler({ type: 'ok' });
-    },
-  });
+	client.useCustomOverlay({
+		showProblems(type, data) {
+			messageHandler({ type, data });
+		},
+		clear() {
+			messageHandler({ type: "ok" });
+		}
+	});
 }

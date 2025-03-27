@@ -1,4 +1,8 @@
-import type { AssetInfo, RawModuleRuleUse, RawOptions } from "@rustbolt/binding";
+import type {
+	AssetInfo,
+	RawModuleRuleUse,
+	RawOptions
+} from "@rustbolt/binding";
 
 import type { Compilation } from "../Compilation";
 import type { Compiler } from "../Compiler";

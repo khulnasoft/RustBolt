@@ -13,7 +13,11 @@ impl CgmHashArtifact {
     self.module_to_hashes.is_empty()
   }
 
-  pub fn get(&self, module: &ModuleIdentifier, runtime: &RuntimeSpec) -> Option<&RustboltHashDigest> {
+  pub fn get(
+    &self,
+    module: &ModuleIdentifier,
+    runtime: &RuntimeSpec,
+  ) -> Option<&RustboltHashDigest> {
     let hashes = self.module_to_hashes.get(module)?;
     hashes.get(runtime)
   }
@@ -33,7 +37,10 @@ impl CgmHashArtifact {
     }
   }
 
-  pub fn remove(&mut self, module: &ModuleIdentifier) -> Option<RuntimeSpecMap<RustboltHashDigest>> {
+  pub fn remove(
+    &mut self,
+    module: &ModuleIdentifier,
+  ) -> Option<RuntimeSpecMap<RustboltHashDigest>> {
     self.module_to_hashes.remove(module)
   }
 }

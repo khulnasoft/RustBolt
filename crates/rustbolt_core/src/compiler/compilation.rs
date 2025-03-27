@@ -2047,12 +2047,13 @@ impl Compilation {
       }
     }
     // create hash for other chunks
-    let other_chunks_hash_results: Vec<Result<(ChunkUkey, (RustboltHashDigest, ChunkContentHash))>> =
-      join_all(other_chunks.into_iter().map(|chunk| async {
-        let hash_result = self.process_chunk_hash(*chunk, &plugin_driver).await?;
-        Ok((*chunk, hash_result))
-      }))
-      .await;
+    let other_chunks_hash_results: Vec<
+      Result<(ChunkUkey, (RustboltHashDigest, ChunkContentHash))>,
+    > = join_all(other_chunks.into_iter().map(|chunk| async {
+      let hash_result = self.process_chunk_hash(*chunk, &plugin_driver).await?;
+      Ok((*chunk, hash_result))
+    }))
+    .await;
     try_process_chunk_hash_results(self, other_chunks_hash_results)?;
     logger.time_end(start);
 

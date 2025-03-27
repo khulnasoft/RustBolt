@@ -124,8 +124,8 @@ const getDeprecationStatus = () => {
 		return false;
 	}
 	return (
-		(process.env.RUSTBOLT_DEP_WARNINGS ?? `${defaultEnableDeprecatedWarning}`) !==
-		"false"
+		(process.env.RUSTBOLT_DEP_WARNINGS ??
+			`${defaultEnableDeprecatedWarning}`) !== "false"
 	);
 };
 

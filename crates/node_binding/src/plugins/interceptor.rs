@@ -1934,7 +1934,10 @@ impl RsdoctorPluginModuleIds for RsdoctorPluginModuleIdsTap {
 
 #[async_trait]
 impl RsdoctorPluginModuleSources for RsdoctorPluginModuleSourcesTap {
-  async fn run(&self, data: &mut RsdoctorModuleSourcesPatch) -> rustbolt_error::Result<Option<bool>> {
+  async fn run(
+    &self,
+    data: &mut RsdoctorModuleSourcesPatch,
+  ) -> rustbolt_error::Result<Option<bool>> {
     let data = std::mem::take(data);
     let bail = self
       .function
