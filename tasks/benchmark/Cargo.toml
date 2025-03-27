@@ -1,0 +1,24 @@
+[package]
+description = "rustbolt benchmark tooling"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_benchmark"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+publish = false
+
+[features]
+default = []
+codspeed = ["criterion2/codspeed"]
+
+[dependencies]
+criterion2 = { default-features = false, version = "2.0.0", features = ["async_tokio"]}
+rustbolt = { workspace = true }
+rustbolt_fs = { workspace = true }
+rustbolt_core = { workspace = true }
+tokio = { workspace = true }
+serde_json = { workspace = true }
+
+[[bench]]
+name    = "benches"
+harness = false

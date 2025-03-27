@@ -1,0 +1,32 @@
+[package]
+description = "rustbolt css plugin"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_plugin_css"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+[dependencies]
+async-trait           = { workspace = true }
+cow-utils             = { workspace = true }
+css-module-lexer      = { workspace = true }
+heck                  = { workspace = true }
+indexmap              = { workspace = true }
+once_cell             = { workspace = true }
+rayon                 = { workspace = true }
+regex                 = { workspace = true }
+rustbolt_cacheable      = { workspace = true }
+rustbolt_collections    = { workspace = true }
+rustbolt_core           = { workspace = true }
+rustbolt_error          = { workspace = true }
+rustbolt_hash           = { workspace = true }
+rustbolt_hook           = { workspace = true }
+rustbolt_plugin_runtime = { workspace = true }
+rustbolt_util           = { workspace = true }
+rustc-hash            = { workspace = true }
+serde_json            = { workspace = true }
+tokio                 = { workspace = true }
+tracing               = { workspace = true }
+urlencoding           = { workspace = true }
+
+[package.metadata.cargo-shear]
+ignored = ["tokio"]

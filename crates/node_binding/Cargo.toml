@@ -1,0 +1,112 @@
+[package]
+description = "node binding"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_node"
+publish     = false
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+plugin = ["rustbolt_loader_swc/plugin"]
+
+[dependencies]
+anyhow                   = { workspace = true }
+ropey                    = { workspace = true }
+rustbolt_allocator         = { workspace = true }
+rustbolt_collections       = { workspace = true }
+rustbolt_core              = { workspace = true }
+rustbolt_error             = { workspace = true }
+rustbolt_fs                = { workspace = true }
+rustbolt_hash              = { workspace = true }
+rustbolt_hook              = { workspace = true }
+rustbolt_napi              = { workspace = true }
+rustbolt_paths             = { workspace = true }
+rustbolt_plugin_html       = { workspace = true }
+rustbolt_plugin_javascript = { workspace = true }
+rustbolt_plugin_rsdoctor   = { workspace = true }
+rustbolt_plugin_runtime    = { workspace = true }
+rustbolt_util              = { workspace = true }
+
+rustbolt_tracing = { workspace = true }
+
+async-trait        = { workspace = true }
+cow-utils          = { workspace = true }
+tracing            = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+napi        = { workspace = true, features = ["async", "tokio_rt", "serde-json", "anyhow"] }
+napi-derive = { workspace = true }
+
+color-backtrace = "0.6.1"
+
+derive_more        = { workspace = true, features = ["debug"] }
+futures            = { workspace = true }
+glob               = { workspace = true }
+heck               = { workspace = true }
+rustbolt_cacheable   = { workspace = true }
+rustbolt_ids         = { workspace = true }
+rustbolt_napi_macros = { workspace = true }
+rustbolt_regex       = { workspace = true }
+rustc-hash         = { workspace = true }
+serde              = { workspace = true }
+serde_json         = { workspace = true }
+swc_core           = { workspace = true, default-features = false, features = ["ecma_transforms_react"] }
+tokio              = { workspace = true, features = ["rt", "macros", "test-util", "parking_lot"] }
+
+rayon                                  = { workspace = true }
+rustbolt_loader_lightningcss             = { workspace = true }
+rustbolt_loader_preact_refresh           = { workspace = true }
+rustbolt_loader_react_refresh            = { workspace = true }
+rustbolt_loader_runner                   = { workspace = true }
+rustbolt_loader_swc                      = { workspace = true }
+rustbolt_loader_testing                  = { workspace = true }
+rustbolt_plugin_asset                    = { workspace = true }
+rustbolt_plugin_banner                   = { workspace = true }
+rustbolt_plugin_circular_dependencies    = { workspace = true }
+rustbolt_plugin_context_replacement      = { workspace = true }
+rustbolt_plugin_copy                     = { workspace = true }
+rustbolt_plugin_css                      = { workspace = true }
+rustbolt_plugin_devtool                  = { workspace = true }
+rustbolt_plugin_dll                      = { workspace = true }
+rustbolt_plugin_dynamic_entry            = { workspace = true }
+rustbolt_plugin_ensure_chunk_conditions  = { workspace = true }
+rustbolt_plugin_entry                    = { workspace = true }
+rustbolt_plugin_externals                = { workspace = true }
+rustbolt_plugin_extract_css              = { workspace = true }
+rustbolt_plugin_hmr                      = { workspace = true }
+rustbolt_plugin_ignore                   = { workspace = true }
+rustbolt_plugin_json                     = { workspace = true }
+rustbolt_plugin_lazy_compilation         = { workspace = true }
+rustbolt_plugin_library                  = { workspace = true }
+rustbolt_plugin_lightning_css_minimizer  = { workspace = true }
+rustbolt_plugin_limit_chunk_count        = { workspace = true }
+rustbolt_plugin_merge_duplicate_chunks   = { workspace = true }
+rustbolt_plugin_mf                       = { workspace = true }
+rustbolt_plugin_no_emit_on_errors        = { workspace = true }
+rustbolt_plugin_progress                 = { workspace = true }
+rustbolt_plugin_real_content_hash        = { workspace = true }
+rustbolt_plugin_remove_duplicate_modules = { workspace = true }
+rustbolt_plugin_remove_empty_chunks      = { workspace = true }
+rustbolt_plugin_runtime_chunk            = { workspace = true }
+rustbolt_plugin_schemes                  = { workspace = true }
+rustbolt_plugin_size_limits              = { workspace = true }
+rustbolt_plugin_split_chunks             = { workspace = true }
+rustbolt_plugin_sri                      = { workspace = true }
+rustbolt_plugin_swc_js_minimizer         = { workspace = true }
+rustbolt_plugin_warn_sensitive_module    = { workspace = true }
+rustbolt_plugin_wasm                     = { workspace = true }
+rustbolt_plugin_web_worker_template      = { workspace = true }
+rustbolt_plugin_worker                   = { workspace = true }
+
+[target.'cfg(not(target_family = "wasm"))'.dependencies]
+tokio = { workspace = true, features = ["rt-multi-thread"] }
+
+rustbolt_tracing = { workspace = true, features = ["otel"] }
+
+
+[build-dependencies]
+napi-build = { workspace = true }

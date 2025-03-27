@@ -1,0 +1,22 @@
+{
+  "name": "rustbolt-react-starter",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rustbolt dev",
+    "build": "rustbolt build",
+    "preview": "rustbolt preview"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@rustbolt/cli": "workspace:*",
+    "@rustbolt/core": "workspace:*",
+    "@rustbolt/plugin-react-refresh": "workspace:*",
+    "@types/react": "^19.0.11",
+    "@types/react-dom": "^19.0.4",
+    "react-refresh": "^0.16.0"
+  }
+}

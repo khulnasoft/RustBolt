@@ -1,0 +1,13 @@
+[package]
+description = "rustbolt paths"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_paths"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+camino           = { workspace = true }
+rustbolt_cacheable = { workspace = true }

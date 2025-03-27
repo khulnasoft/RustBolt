@@ -1,0 +1,30 @@
+[package]
+description = "rustbolt error"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_error"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow             = { workspace = true, features = ["backtrace"] }
+cow-utils          = { workspace = true }
+derive_more        = { workspace = true, features = ["debug"] }
+futures            = { workspace = true }
+miette             = { version = "7.2.0", features = ["fancy"] }
+once_cell          = { workspace = true }
+owo-colors         = "4.0.0"
+rustbolt_cacheable   = { workspace = true }
+rustbolt_collections = { workspace = true }
+rustbolt_paths       = { workspace = true }
+swc_core           = { workspace = true, features = ["common", "common_concurrent"] }
+swc_parallel       = { workspace = true, default-features = false }
+termcolor          = "1.4.1"
+textwrap           = "0.16.1"
+thiserror          = "1.0.69"
+
+unicode-width = "0.2.0"
+
+[package.metadata.cargo-shear]
+ignored = ["swc_parallel"]

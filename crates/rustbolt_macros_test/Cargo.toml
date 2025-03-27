@@ -1,0 +1,24 @@
+
+[package]
+description = "rustbolt macros test"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_macros_test"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+[dev-dependencies]
+async-trait        = { workspace = true }
+rustbolt_cacheable   = { workspace = true }
+rustbolt_collections = { workspace = true }
+rustbolt_core        = { workspace = true }
+rustbolt_error       = { workspace = true }
+rustbolt_hash        = { workspace = true }
+rustbolt_hook        = { workspace = true }
+rustbolt_macros      = { workspace = true }
+rustbolt_util        = { workspace = true }
+tokio              = { workspace = true, features = ["macros"] }
+tracing            = { workspace = true }
+trybuild           = { version = "1.0.101", features = ["diff"] }
+
+[package.metadata.cargo-shear]
+ignored = ["tracing", "rustbolt_cacheable", "async-trait", "rustbolt_hash", "tokio"]

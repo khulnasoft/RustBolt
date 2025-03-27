@@ -1,0 +1,15 @@
+[package]
+description = "rustbolt hook"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_hook"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-trait         = { workspace = true }
+futures-concurrency = "7.6.2"
+rustbolt_error        = { workspace = true }
+rustbolt_macros       = { workspace = true }
+rustc-hash          = { workspace = true }

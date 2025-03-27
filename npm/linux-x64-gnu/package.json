@@ -1,0 +1,29 @@
+{
+  "name": "@rustbolt/binding-linux-x64-gnu",
+  "version": "1.3.0-beta.0",
+  "license": "MIT",
+  "description": "Node binding for rustbolt",
+  "main": "rustbolt.linux-x64-gnu.node",
+  "homepage": "https://rustbolt.dev",
+  "bugs": "https://github.com/khulnasoft/rustbolt/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khulnasoft/rustbolt"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "files": [
+    "rustbolt.linux-x64-gnu.node"
+  ],
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "libc": [
+    "glibc"
+  ]
+}

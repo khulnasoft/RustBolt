@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "rustbolt build"
+  },
+  "devDependencies": {
+    "@rustbolt/cli": "workspace:*"
+  }
+}

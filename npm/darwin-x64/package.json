@@ -1,0 +1,26 @@
+{
+  "name": "@rustbolt/binding-darwin-x64",
+  "version": "1.3.0-beta.0",
+  "license": "MIT",
+  "description": "Node binding for rustbolt",
+  "main": "rustbolt.darwin-x64.node",
+  "homepage": "https://rustbolt.dev",
+  "bugs": "https://github.com/khulnasoft/rustbolt/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khulnasoft/rustbolt"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "files": [
+    "rustbolt.darwin-x64.node"
+  ],
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "x64"
+  ]
+}

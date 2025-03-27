@@ -1,0 +1,26 @@
+[package]
+description = "rustbolt split chunks plugin"
+edition     = "2021"
+license     = "MIT"
+name        = "rustbolt_plugin_split_chunks"
+repository  = "https://github.com/khulnasoft/rustbolt"
+version     = "0.2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dashmap            = { workspace = true }
+derive_more        = { workspace = true, features = ["debug"] }
+futures            = { workspace = true }
+rayon              = { workspace = true }
+regex              = { workspace = true }
+rustbolt_collections = { workspace = true }
+rustbolt_core        = { workspace = true }
+rustbolt_error       = { workspace = true }
+rustbolt_futures     = { workspace = true }
+rustbolt_hash        = { workspace = true }
+rustbolt_hook        = { workspace = true }
+rustbolt_regex       = { workspace = true }
+rustbolt_util        = { workspace = true }
+rustc-hash         = { workspace = true }
+tracing            = { workspace = true }

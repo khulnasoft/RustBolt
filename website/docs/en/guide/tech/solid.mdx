@@ -1,0 +1,38 @@
+# Solid
+
+## How to use
+
+Rustbolt provides two solutions to support Solid:
+
+- **Use Rsbuild**: Rsbuild provides out-of-the-box support for Solid, allowing you to quickly create a Solid project. See [Rsbuild - Solid](https://rsbuild.dev/guide/framework/solid) for details.
+- **Manually configure Rustbolt**: You can refer to the current document to manually add configurations for Solid.
+
+## Configure Solid
+
+Thanks to the good compatibility of Rustbolt with the babel-loader, it is very easy to use Solid in Rustbolt. All you need is babel-loader and Solid babel preset. Rustbolt provides Solid [example](https://github.com/rustbolt-contrib/rstack-examples/tree/main/rustbolt/solid) for reference.
+
+```js title="rustbolt.config.mjs"
+import { defineConfig } from '@rustbolt/cli';
+
+export default defineConfig({
+  entry: {
+    main: './src/index.jsx',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['solid'],
+              plugins: ['solid-refresh/babel'],
+            },
+          },
+        ],
+      },
+    ],
+  },
+});
+```

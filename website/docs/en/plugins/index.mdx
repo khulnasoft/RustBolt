@@ -1,0 +1,32 @@
+# Introduction
+
+Rustbolt enhances its compilation capabilities through a rich ecosystem of plugins. These plugins fall into the following categories:
+
+## Webpack-aligned built-in plugins
+
+To align with webpack's functionality, Rustbolt has replicated most of webpack's built-in plugins. They maintain the same naming and configuration parameters as closely as possible and provide the same features.
+
+See [Webpack-aligned built-in plugins - Overview](/plugins/webpack/index) for more details.
+
+## Rustbolt-only built-in plugins
+
+Combining its own implementation characteristics, Rustbolt offers several unique plugins as alternatives to corresponding plugins from the webpack ecosystem, aiming to deliver more efficient performance.
+
+Including:
+
+- [CircularDependencyRustboltPlugin](/plugins/rustbolt/circular-dependency-rustbolt-plugin)
+- [CopyRustboltPlugin](/plugins/rustbolt/copy-rustbolt-plugin)
+- [CssExtractRustboltPlugin](/plugins/rustbolt/css-extract-rustbolt-plugin)
+- [HtmlRustboltPlugin](/plugins/rustbolt/html-rustbolt-plugin)
+- [LightningCssMinimizerRustboltPlugin](/plugins/rustbolt/lightning-css-minimizer-rustbolt-plugin)
+- [SwcJsMinimizerRustboltPlugin](/plugins/rustbolt/swc-js-minimizer-rustbolt-plugin)
+
+## Compatible plugins from the webpack ecosystem
+
+Rustbolt strives to maintain compatibility with the webpack plugin ecosystem to leverage the excellent features that have been accumulated and validated by the community. Please refer to the [Plugin Compatibility List](/guide/compatibility/plugin) to access a list of webpack plugins that have passed our compatibility tests.
+
+## Community plugins
+
+You can check out the community Rustbolt plugins at [awesome-rustbolt](https://github.com/khulnasoft/awesome-rustbolt).
+
+Welcome to add the plugins you developed to this repository.

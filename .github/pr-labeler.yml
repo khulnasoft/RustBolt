@@ -1,0 +1,10 @@
+# See context at https://github.com/khulnasoft/rustbolt/discussions/2760
+
+"release: feature":
+  - "/^feat/"
+"release: performance":
+  - "/^perf/"
+"release: bug fix":
+  - "/^fix/"
+"release: document":
+  - "/^docs/"
