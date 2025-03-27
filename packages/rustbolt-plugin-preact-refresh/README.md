@@ -5,7 +5,7 @@
 
 # @rustbolt/plugin-preact-refresh
 
-Preact refresh plugin for [Rustbolt](https://github.com/web-infra-dev/rustbolt).
+Preact refresh plugin for [Rustbolt](https://github.com/khulnasoft/rustbolt).
 
 ## Installation
 
@@ -136,4 +136,4 @@ Thanks to the [prefresh](https://github.com/preactjs/prefresh) created by [@Jovi
 
 ## License
 
-Rustbolt is [MIT licensed](https://github.com/web-infra-dev/rustbolt/blob/main/LICENSE).
+Rustbolt is [MIT licensed](https://github.com/khulnasoft/rustbolt/blob/main/LICENSE).
