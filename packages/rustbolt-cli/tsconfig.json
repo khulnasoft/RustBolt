@@ -8,6 +8,9 @@
   "references": [
     {
       "path": "../rustbolt"
+    },
+    {
+      "path": "../rustbolt-dev-server"
     }
   ],
   "ts-node": {
