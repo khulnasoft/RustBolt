@@ -15,8 +15,8 @@ import {
 	type JsCompatSourceOwned,
 	type JsCompilation,
 	type JsPathData,
-	JsRustboltSeverity,
-	type JsRuntimeModule
+	type JsRuntimeModule,
+	JsRustboltSeverity
 } from "@rustbolt/binding";
 export type { AssetInfo } from "@rustbolt/binding";
 import * as liteTapable from "@rustbolt/lite-tapable";
@@ -32,8 +32,8 @@ import type { CodeGenerationResult, Module } from "./Module";
 import ModuleGraph from "./ModuleGraph";
 import type { NormalModuleFactory } from "./NormalModuleFactory";
 import type { ResolverFactory } from "./ResolverFactory";
-import { JsRustboltDiagnostic, type RustboltError } from "./RustboltError";
 import { RuntimeModule } from "./RuntimeModule";
+import { JsRustboltDiagnostic, type RustboltError } from "./RustboltError";
 import {
 	Stats,
 	type StatsAsset,

@@ -72,7 +72,7 @@
     "@rustbolt/cli": "workspace:*",
     "@rustbolt/core": "workspace:*",
     "@rustbolt/plugin-preact-refresh": "npm:@rspack/plugin-preact-refresh",
-    "@rustbolt/plugin-react-refresh": "workspace:*",
+    "@rustbolt/plugin-react-refresh": "^1.0.4",
     "@rustbolt/test-tools": "workspace:*",
     "@swc/helpers": "0.5.15",
     "@swc/plugin-remove-console": "^7.0.0",

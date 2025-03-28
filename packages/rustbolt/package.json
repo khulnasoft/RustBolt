@@ -74,7 +74,7 @@
   "dependencies": {
     "@module-federation/runtime-tools": "0.11.1",
     "@rustbolt/binding": "workspace:*",
-    "@rustbolt/lite-tapable": "workspace:*",
+    "@rustbolt/lite-tapable": "^1.0.1",
     "caniuse-lite": "^1.0.30001706"
   },
   "peerDependencies": {

@@ -47,8 +47,8 @@ import type {
 	Optimization,
 	Performance,
 	ResolveOptions,
-	RustboltFutureOptions,
 	RuleSetRules,
+	RustboltFutureOptions,
 	SnapshotOptions
 } from "./types";
 
