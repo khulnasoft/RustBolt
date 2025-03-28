@@ -65,7 +65,8 @@ quote              = { version = "1.0.38" }
 rayon              = { version = "1.10.0" }
 regex              = { version = "1.11.1" }
 ropey              = "1.6.1"
-rustbolt_sources     = { version = "0.4.1" }
+rustbolt_resolver  = { features = ["package_json_raw_json_api"], version = "0.5.3" }
+rustbolt_sources   = { version = "0.4.1" }
 rustc-hash         = { version = "2.1.0" }
 serde              = { version = "1.0.217" }
 serde_json         = { version = "1.0.134" }
@@ -124,7 +125,6 @@ rustbolt_deps_graph                      = { version = "0.2.0", path = "crates/r
 rustbolt_error                           = { version = "0.2.0", path = "crates/rustbolt_error" }
 rustbolt_fs                              = { version = "0.2.0", path = "crates/rustbolt_fs" }
 rustbolt_futures                         = { version = "0.2.0", path = "crates/rustbolt_futures" }
-rustbolt_resolver                        = { version = "0.2.0", path = "crates/rustbolt_resolver" }
 rustbolt_hash                            = { version = "0.2.0", path = "crates/rustbolt_hash" }
 rustbolt_hook                            = { version = "0.2.0", path = "crates/rustbolt_hook" }
 rustbolt_identifier                      = { version = "0.2.0", path = "crates/rustbolt_identifier" }
