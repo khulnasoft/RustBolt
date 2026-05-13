@@ -19,9 +19,9 @@
   "license": "MIT",
   "dependencies": {
     "@rstack-dev/doc-ui": "1.7.3",
-    "axios": "^1.8.3",
+    "axios": "^1.15.2",
     "markdown-to-jsx": "^7.7.4",
-    "mermaid": "^11.5.0",
+    "mermaid": "^11.15.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "semver": "^7.7.1",
