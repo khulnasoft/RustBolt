@@ -95,7 +95,7 @@
     "mime-types": "^2.1.35",
     "p-retry": "^6.2.0",
     "webpack-dev-middleware": "^7.4.2",
-    "webpack-dev-server": "5.2.0",
+    "webpack-dev-server": "5.2.4",
     "ws": "^8.18.0"
   },
   "peerDependencies": {
